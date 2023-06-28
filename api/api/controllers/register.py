@@ -38,8 +38,9 @@ def register_user():
 
     return render_template('register.html')
 
-@bp.route('/users')
+@bp.route('/users', methods=['GET'])
 def users():
     users = repo.list_users()
-    return jsonify(users)
+    return users
+    
     #return jsonify(render_template('users.html', users=users))
